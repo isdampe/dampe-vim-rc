@@ -21,6 +21,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'sickill/vim-monokai'
+Plugin 'morhetz/gruvbox'
 Plugin 'https://github.com/rakr/vim-one.git'
 
 " All of your Plugins must be added before the following line
@@ -30,7 +31,9 @@ filetype plugin indent on    " required
 
 "Custom things here.
 
-colorscheme molokai "Color scheme 
+colorscheme gruvbox "Color scheme 
+set background=dark
+let g:airline_theme='gruvbox'
 syntax enable       "Syntax on
 set tabstop=2
 set softtabstop=2
