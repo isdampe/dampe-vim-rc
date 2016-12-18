@@ -78,4 +78,6 @@ if has("gui_running")
 	"Paste, align, and then jump cursor to end...
 	imap <C-S-v> <Esc>"+gP==A
 
+	set lines=55 columns=200
+
 endif"
