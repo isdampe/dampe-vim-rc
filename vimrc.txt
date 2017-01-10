@@ -19,6 +19,9 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'dracula/vim'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
+
 
 Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
@@ -80,4 +83,4 @@ if has("gui_running")
 
 	set lines=55 columns=200
 
-endif"
+endif
