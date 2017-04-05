@@ -23,9 +23,11 @@ Plugin 'dracula/vim'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 
+Plugin 'chriskempson/base16-vim'
 Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
 Plugin 'https://github.com/rakr/vim-one.git'
+Plugin 'https://github.com/adelarsq/vim-grimmjow'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,6 +75,9 @@ if has("gui_running")
 	"Hide menu bars
 	set guioptions =
 
+	"Set gui font
+	set guifont=Tamsyn\ 11
+
 	colorscheme one
 	let g:airline_theme='one'
 
@@ -83,4 +88,4 @@ if has("gui_running")
 
 	set lines=55 columns=200
 
-endif
+endif"
