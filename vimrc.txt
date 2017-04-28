@@ -48,6 +48,7 @@ set showcmd
 set cursorline
 filetype indent on
 set wildmenu				"Awesome autocomplete gui menu
+set dir=/tmp
 
 set lazyredraw      "Only redraw when necessary
 set showmatch       "Highlight matching [{()}]
@@ -78,7 +79,7 @@ if has("gui_running")
 	"Set gui font
 	set guifont=Tamsyn\ 11
 
-	colorscheme one
+	colorscheme base16-materia
 	let g:airline_theme='one'
 
 	vmap <C-S-x> "+x
