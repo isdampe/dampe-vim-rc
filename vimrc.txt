@@ -65,6 +65,11 @@ highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 autocmd vimenter * NERDTree
 autocmd VimEnter * wincmd p
 
+"YouCompleteMe
+"Auto-close the preview window after selection
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 "If running GVIM
 if has("gui_running")
 
