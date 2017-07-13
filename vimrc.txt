@@ -19,15 +19,10 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'dracula/vim'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
-
-
+Plugin 'tomasiser/vim-code-dark'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sickill/vim-monokai'
-Plugin 'morhetz/gruvbox'
-Plugin 'https://github.com/rakr/vim-one.git'
-Plugin 'https://github.com/adelarsq/vim-grimmjow'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,20 +31,21 @@ filetype plugin indent on    " required
 
 "Custom things here.
 
-colorscheme gruvbox "Color scheme 
+colorscheme molokai "Color scheme 
 set background=dark
-let g:airline_theme='gruvbox'
+let g:airline_theme='molokai'
 syntax enable       "Syntax on
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+
+"Use 2 spaces for shifting.
+set tabstop=2 "Show existing tabs with width of 2
+set shiftwidth=2 "When pressing tab 
 set number
 set showcmd
 set cursorline
 filetype indent on
 set wildmenu				"Awesome autocomplete gui menu
 set dir=/tmp
-
+set colorcolumn=80
 set lazyredraw      "Only redraw when necessary
 set showmatch       "Highlight matching [{()}]
 
@@ -65,9 +61,8 @@ set mouse=a
 "Autocomplete menu color
 highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 
+"Open NERDTree and then activate buffer
 autocmd vimenter * NERDTree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * wincmd p
 
 "If running GVIM
@@ -79,8 +74,8 @@ if has("gui_running")
 	"Set gui font
 	set guifont=Tamsyn\ 11
 
-	colorscheme base16-materia
-	let g:airline_theme='one'
+	colorscheme codedark
+	let g:airline_theme='codedark'
 
 	vmap <C-S-x> "+x
 	vmap <C-S-c> "+y
