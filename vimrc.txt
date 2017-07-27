@@ -39,6 +39,7 @@ syntax enable       "Syntax on
 "Use 2 spaces for shifting.
 set tabstop=2 "Show existing tabs with width of 2
 set shiftwidth=2 "When pressing tab 
+set expandtab
 set number
 set showcmd
 set cursorline
