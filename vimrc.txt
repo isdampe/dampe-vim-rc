@@ -23,6 +23,7 @@ Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sickill/vim-monokai'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,9 +32,9 @@ filetype plugin indent on    " required
 
 "Custom things here.
 
-colorscheme molokai "Color scheme 
-set background=dark
-let g:airline_theme='molokai'
+colorscheme PaperColor
+set background=light
+let g:airline_theme='papercolor'
 syntax enable       "Syntax on
 
 "Use 2 spaces for shifting.
@@ -71,22 +72,26 @@ autocmd VimEnter * wincmd p
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+set t_Co=256
+
 "If running GVIM
 if has("gui_running")
 
 	"Hide menu bars
 	set guioptions =
 
+  set background=dark
+
 	"Set gui font
 	set guifont=Tamsyn\ 11
-
-	colorscheme codedark
-	let g:airline_theme='codedark'
 
 	vmap <C-S-x> "+x
 	vmap <C-S-c> "+y
   "Paste from clipboard
   imap <C-S-v> <Esc>"+pli 
 	set lines=55 columns=200
+
+  set noerrorbells visualbell t_vb=
+  autocmd GUIEnter * set visualbell t_vb=
 
 endif
