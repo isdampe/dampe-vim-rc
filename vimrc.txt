@@ -25,6 +25,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'sickill/vim-monokai'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'tpope/vim-fugitive'
+Plugin 'stanangeloff/php.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,9 +40,9 @@ let g:airline_theme='papercolor'
 syntax enable       "Syntax on
 
 "Use 2 spaces for shifting.
-set tabstop=2 "Show existing tabs with width of 2
-set shiftwidth=2 "When pressing tab 
-set expandtab
+set tabstop=4 "Show existing tabs with width of 4
+set shiftwidth=4 "When pressing tab 
+set smarttab
 set number
 set showcmd
 set cursorline
@@ -61,11 +62,16 @@ set nowrap
 set ttyfast
 set mouse=a
 
+"Remapping - auto expand brackets.
+inoremap {<cr> {<cr>}<c-o><s-o>
+inoremap [<cr> [<cr>]<c-o><s-o>
+inoremap (<cr> (<cr>)<c-o><s-o>
+
 "Autocomplete menu color
 highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 
 "Open NERDTree and then activate buffer
-autocmd vimenter * NERDTree
+autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 "YouCompleteMe
@@ -82,18 +88,18 @@ if has("gui_running")
 	"Hide menu bars
 	set guioptions =
 
-  set background=dark
+	set background=dark
 
 	"Set gui font
 	set guifont=Monaco
 
 	vmap <C-S-x> "+x
 	vmap <C-S-c> "+y
-  "Paste from clipboard
-  imap <C-S-V> <Esc>"+pi<Esc>la
+	"Paste from clipboard
+	imap <C-S-V> <Esc>"+pi<Esc>la
 	set lines=55 columns=200
 
-  set noerrorbells visualbell t_vb=
-  autocmd GUIEnter * set visualbell t_vb=
+	set noerrorbells visualbell t_vb=
+	autocmd GUIEnter * set visualbell t_vb=
 
 endif
