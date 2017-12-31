@@ -4,8 +4,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -31,13 +29,10 @@ Plugin 'stanangeloff/php.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
-"Custom things here.
-
+syntax enable       "Syntax on
 colorscheme PaperColor
 set background=dark
 let g:airline_theme='papercolor'
-syntax enable       "Syntax on
 
 "Use 2 spaces for shifting.
 set tabstop=4 "Show existing tabs with width of 4
