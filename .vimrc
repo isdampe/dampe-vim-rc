@@ -10,6 +10,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'mattn/webapi-vim'
+Plugin 'Wildog/airline-weather.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
 Plugin 'isruslan/vim-es6'
@@ -32,7 +34,12 @@ filetype plugin indent on    " required
 syntax enable       "Syntax on
 colorscheme PaperColor
 set background=dark
+
 let g:airline_theme='papercolor'
+let g:weather#area = 'melbourne, au'
+let g:weather#unit = 'metric'
+let g:weather#appid = '13427d911c552daabf1638ed3c2a126f'
+let g:weather#cache_ttl = '1800'
 
 "Use 2 spaces for shifting.
 set tabstop=4 "Show existing tabs with width of 4
@@ -61,6 +68,8 @@ set mouse=a
 inoremap {<cr> {<cr>}<c-o><s-o>
 inoremap [<cr> [<cr>]<c-o><s-o>
 inoremap (<cr> (<cr>)<c-o><s-o>
+
+nnoremap <silent> <Esc><Esc> :nohl<CR><C-l>
 
 "Allow sudo write by :w!!
 cnoremap w!! w !sudo tee > /dev/null %
@@ -108,3 +117,4 @@ function! CopyAsHtml(line1, line2)
   call feedkeys('ggvG$"+y"')
 endfunction
 command! -range=% CopyAsHtml :call CopyAsHtml(<line1>,<line2>)
+
