@@ -98,7 +98,8 @@ if has("gui_running")
 	set background=dark
 
 	"Set gui font
-	set guifont=Monaco
+	set guifont=Droid\ Sans\ Mono\ for\ Powerline
+	let g:airline_powerline_fonts = 1
 
 	vmap <C-S-x> "+x
 	vmap <C-S-c> "+y
