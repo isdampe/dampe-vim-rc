@@ -27,6 +27,9 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'tpope/vim-fugitive'
 Plugin 'stanangeloff/php.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'tyrannicaltoucan/vim-deep-space'
+Plugin 'drewtempelmeyer/palenight.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,7 +39,7 @@ syntax enable       "Syntax on
 colorscheme PaperColor
 set background=dark
 
-let g:airline_theme='papercolor'
+let g:airline_theme='onedark'
 let g:weather#area = 'melbourne, au'
 let g:weather#unit = 'metric'
 let g:weather#appid = '13427d911c552daabf1638ed3c2a126f'
@@ -85,6 +88,7 @@ autocmd VimEnter * wincmd p
 "YouCompleteMe
 "Auto-close the preview window after selection
 let g:ycm_auto_trigger = 1
+
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
@@ -93,6 +97,8 @@ set t_Co=256
 "If running GVIM
 if has("gui_running")
 
+	colorscheme palenight
+
 	"Hide menu bars
 	set guioptions =
 
@@ -100,6 +106,7 @@ if has("gui_running")
 
 	"Set gui font
 	set guifont=Droid\ Sans\ Mono\ for\ Powerline
+	set linespace=1
 	let g:airline_powerline_fonts = 1
 
 	vmap <C-S-x> "+x
@@ -120,3 +127,10 @@ function! CopyAsHtml(line1, line2)
 endfunction
 command! -range=% CopyAsHtml :call CopyAsHtml(<line1>,<line2>)
 
+:command MbedBuildDeploy !gcc4mbed_deploy
+nnoremap <F5> :w\|:MbedBuildDeploy<CR>
+
+function! FindInProject(term)
+	! grep -rl a:term
+endfunction
+command! -nargs=1 FF call FindInProject(<f-args>)
