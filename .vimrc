@@ -111,8 +111,6 @@ if has("gui_running")
 	colorscheme onehalfdark
 	let g:airline_theme='onehalfdark'
 
-=======
->>>>>>> db44685ede53991457150bec377115badfdce270
 	"Hide menu bars
 	set guioptions =
 
