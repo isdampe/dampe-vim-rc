@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bling/vim-airline'
 Plugin 'mattn/webapi-vim'
 Plugin 'Wildog/airline-weather.vim'
@@ -23,7 +24,6 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'chriskempson/base16-vim'
-Plugin 'sickill/vim-monokai'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'tpope/vim-fugitive'
 Plugin 'stanangeloff/php.vim'
@@ -33,6 +33,7 @@ Plugin 'tyrannicaltoucan/vim-deep-space'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'lleonini/kernel-coding-style'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'leafgarland/typescript-vim'
 
 
 " All of your Plugins must be added before the following line
@@ -40,10 +41,10 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax enable       "Syntax on
-colorscheme PaperColor
+colorscheme papercolor
 set background=dark
 
-let g:airline_theme='onedark'
+let g:airline_theme='papercolor'
 let g:weather#area = 'melbourne, au'
 let g:weather#unit = 'metric'
 let g:weather#appid = '13427d911c552daabf1638ed3c2a126f'
@@ -98,7 +99,6 @@ autocmd VimEnter * wincmd p
 "YouCompleteMe
 "Auto-close the preview window after selection
 let g:ycm_auto_trigger = 1
-
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
@@ -107,17 +107,20 @@ set t_Co=256
 "If running GVIM
 if has("gui_running")
 
+<<<<<<< HEAD
 	colorscheme onehalfdark
 	let g:airline_theme='onehalfdark'
 
+=======
+>>>>>>> db44685ede53991457150bec377115badfdce270
 	"Hide menu bars
 	set guioptions =
 
 	set background=dark
 
 	"Set gui font
-	set guifont=Droid\ Sans\ Mono\ for\ Powerline
-	set linespace=1
+	set guifont=Monaco\ for\ Powerline:h12
+	set linespace=2
 	let g:airline_powerline_fonts = 1
 
 	vmap <C-S-x> "+x
@@ -138,10 +141,3 @@ function! CopyAsHtml(line1, line2)
 endfunction
 command! -range=% CopyAsHtml :call CopyAsHtml(<line1>,<line2>)
 
-:command MbedBuildDeploy !gcc4mbed_deploy
-nnoremap <F5> :w\|:MbedBuildDeploy<CR>
-
-function! FindInProject(term)
-	! grep -rl a:term
-endfunction
-command! -nargs=1 FF call FindInProject(<f-args>)
