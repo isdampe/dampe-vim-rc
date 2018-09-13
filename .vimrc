@@ -15,6 +15,7 @@ Plugin 'Wildog/airline-weather.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
 Plugin 'isruslan/vim-es6'
+Plugin 'JulesWang/css.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
@@ -30,6 +31,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'tyrannicaltoucan/vim-deep-space'
 Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'lleonini/kernel-coding-style'
+Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,6 +48,12 @@ let g:weather#area = 'melbourne, au'
 let g:weather#unit = 'metric'
 let g:weather#appid = '13427d911c552daabf1638ed3c2a126f'
 let g:weather#cache_ttl = '1800'
+let g:airline_section_warning = ''
+let g:airline_section_y = ''
+let g:airline_section_x = ''
+let g:airline_section_b = '%-0.32{getcwd()}'
+let g:airline_section_c = '%t'
+silent !rm ~/.cache/.weather
 
 "Use 2 spaces for shifting.
 set tabstop=4 "Show existing tabs with width of 4
@@ -97,7 +107,8 @@ set t_Co=256
 "If running GVIM
 if has("gui_running")
 
-	colorscheme palenight
+	colorscheme onehalfdark
+	let g:airline_theme='onehalfdark'
 
 	"Hide menu bars
 	set guioptions =
