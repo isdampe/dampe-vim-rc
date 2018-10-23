@@ -25,6 +25,7 @@ Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sickill/vim-monokai'
+Plugin 'tomasr/molokai'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'tpope/vim-fugitive'
 Plugin 'stanangeloff/php.vim'
@@ -109,8 +110,8 @@ set t_Co=256
 "If running GVIM
 if has("gui_running")
 
-	colorscheme onehalfdark
-	let g:airline_theme='onehalfdark'
+	colorscheme base16-monokai
+	let g:airline_theme='molokai'
 
 	"Hide menu bars
 	set guioptions =
