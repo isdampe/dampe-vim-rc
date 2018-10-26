@@ -56,7 +56,7 @@ let g:airline_section_y = ''
 let g:airline_section_x = ''
 let g:airline_section_b = '%-0.32{getcwd()}'
 let g:airline_section_c = '%t'
-silent !rm ~/.cache/.weather
+silent !rm -f ~/.cache/.weather
 
 "Use 2 spaces for shifting.
 set tabstop=4 "Show existing tabs with width of 4
