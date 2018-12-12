@@ -64,7 +64,7 @@ set shiftwidth=4 "When pressing tab
 set smarttab
 set number
 set showcmd
-set cursorline
+"set cursorline
 filetype indent on
 set wildmenu				"Awesome autocomplete gui menu
 set dir=/tmp
@@ -105,6 +105,9 @@ let g:ycm_auto_trigger = 1
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+
+set wildignore+=*/node_modules/*,*.so,*.swp,*/.git/*
+
 set t_Co=256
 
 "If running GVIM
@@ -119,7 +122,7 @@ if has("gui_running")
 	set background=dark
 
 	"Set gui font
-	set guifont=Droid\ Sans\ Mono\ for\ Powerline
+	set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
 	set linespace=1
 	let g:airline_powerline_fonts = 1
 
