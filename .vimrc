@@ -110,6 +110,8 @@ set wildignore+=*/node_modules/*,*.so,*.swp,*/.git/*
 
 set t_Co=256
 
+let &t_ut=''
+
 "If running GVIM
 if has("gui_running")
 
