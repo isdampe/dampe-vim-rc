@@ -1,0 +1,131 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'pangloss/vim-javascript'
+Plugin 'raimondi/delimitmate'
+Plugin 'JulesWang/css.vim'
+Plugin 'ObserverOfTime/scss.vim'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'tpope/vim-fugitive'
+Plugin 'stanangeloff/php.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'lleonini/kernel-coding-style'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'klen/python-mode'
+Plugin 'junegunn/gv.vim'
+Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax enable       "Syntax on
+colorscheme onehalfdark 
+
+let g:airline_theme='onedark'
+
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set number
+set showcmd
+" set cursorline
+set wildmenu				"Awesome autocomplete gui menu
+set dir=/tmp
+set colorcolumn=120
+set lazyredraw      "Only redraw when necessary
+set showmatch       "Highlight matching [{()}]
+
+"Searching
+set incsearch
+set hlsearch
+set nowrap
+
+"Mouse
+set ttyfast
+set mouse=a
+
+"Remapping - auto expand brackets.
+inoremap {<cr> {<cr>}<c-o><s-o>
+inoremap [<cr> [<cr>]<c-o><s-o>
+inoremap (<cr> (<cr>)<c-o><s-o>
+
+nnoremap <silent> <Esc><Esc> :nohl<CR><C-l>
+nnoremap <silent> <c-\> :NERDTreeToggle<CR>
+
+silent !mkdir -p /tmp/vim-undo
+set undofile
+set undodir=/tmp/vim-undo
+
+"Allow sudo write by :w!!
+cnoremap w!! w !sudo tee > /dev/null %
+
+"Autocomplete menu color
+highlight Pmenu ctermfg=0 ctermbg=5 guifg=#303030 guibg=#f8f8f0
+
+"YouCompleteMe
+"Auto-close the preview window after selection
+let g:ycm_auto_trigger = 1
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+
+set wildignore+=*/node_modules/*,*.so,*.swp,*/.git/*
+
+set t_Co=256
+let g:solarized_termcolors=256
+
+let &t_ut=''
+
+"If running GVIM
+if has("gui_running")
+
+	colorscheme base16-monokai
+	let g:airline_theme='molokai'
+
+	"Hide menu bars
+	set guioptions =
+
+	set background=dark
+
+	"Set gui font
+	set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
+	set linespace=1
+	let g:airline_powerline_fonts = 1
+
+	vmap <C-S-x> "+x
+	vmap <C-S-c> "+y
+	"Paste from clipboard
+	imap <C-S-V> <Esc>"+pi<Esc>la
+	set lines=55 columns=200
+
+	set noerrorbells visualbell t_vb=
+	autocmd GUIEnter * set visualbell t_vb=
+
+	"Automatically copy the output of TOhtml to the system clipboard
+	function! CopyAsHtml(line1, line2)
+	  exec a:line1.','.a:line2.'TOhtml'
+	  call feedkeys('ggvG$"+y"')
+	endfunction
+	command! -range=% CopyAsHtml :call CopyAsHtml(<line1>,<line2>)
+
+endif
+
