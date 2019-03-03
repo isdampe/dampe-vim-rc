@@ -38,10 +38,17 @@ Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-syntax enable       "Syntax on
-colorscheme onehalfdark 
+syntax enable
 
-let g:airline_theme='onedark'
+if strftime("%H") < 8 || strftime("%H") > 18
+	colorscheme onehalfdark 
+	set background=dark
+	let g:airline_theme='onedark'
+else
+	colorscheme PaperColor
+	set background=light
+	let g:airline_theme='onedark'
+endif
 
 set tabstop=4
 set shiftwidth=4
