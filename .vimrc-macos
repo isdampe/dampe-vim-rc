@@ -40,14 +40,14 @@ filetype plugin indent on    " required
 
 syntax enable
 
-if strftime("%H") < 8 || strftime("%H") > 18
+if strftime("%H") < 8 || strftime("%H") > 16
 	colorscheme onehalfdark 
 	set background=dark
 	let g:airline_theme='onedark'
 else
 	colorscheme PaperColor
 	set background=light
-	let g:airline_theme='onedark'
+	let g:airline_theme='papercolor'
 endif
 
 set tabstop=4
@@ -58,7 +58,7 @@ set showcmd
 " set cursorline
 set wildmenu				"Awesome autocomplete gui menu
 set dir=/tmp
-set colorcolumn=120
+set colorcolumn=80
 set lazyredraw      "Only redraw when necessary
 set showmatch       "Highlight matching [{()}]
 
