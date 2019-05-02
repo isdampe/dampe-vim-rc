@@ -10,7 +10,7 @@ else
 	mkdir -p $font_dir
 	echo "Installing GTK2 GVIM fix..."
 	cp ".gtkrc-2.0" ~/
-	cp ".vimrc-linux" ~/
+	cp ".vimrc-linux" ~/.vimrc
 fi
 
 echo "Installing Droid Sans Mono for Powerline..."
