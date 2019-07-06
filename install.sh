@@ -4,13 +4,15 @@ if test "$(uname)" = "Darwin" ; then
 	# MacOS
 	font_dir="$HOME/Library/Fonts"
 	cp ".vimrc-macos" ~/.vimrc
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 else
 	# Linux
 	font_dir="$HOME/.fonts"
 	mkdir -p $font_dir
 	echo "Installing GTK2 GVIM fix..."
 	cp ".gtkrc-2.0" ~/
-	cp ".vimrc-linux" ~/
+	cp ".vimrc-linux" ~/.vimrc
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 echo "Installing Droid Sans Mono for Powerline..."
