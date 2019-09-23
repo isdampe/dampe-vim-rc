@@ -40,6 +40,8 @@ Plugin 'https://github.com/atelierbram/Base2Tone-vim.git'
 Plugin 'https://github.com/vim-scripts/DuoTones-Dark.git'
 Plugin 'https://github.com/HenryNewcomer/vim-theme-papaya.git'
 Plugin 'https://github.com/phanviet/vim-monokai-pro.git'
+Plugin 'ScrollColors'
+Plugin 'bkad/camelcasemotion'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 
 
@@ -55,6 +57,16 @@ let g:gruvbox_italic=1
 let g:airline_theme='Base2Tone_MeadowDark'
 let g:grubox_termcolors=256
 set termguicolors
+
+" Camel case
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
 
 set tabstop=4
 set shiftwidth=4
