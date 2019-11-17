@@ -91,7 +91,7 @@ if has("gui_running")
 	colorscheme aurora
 
 	"Set gui font
-	set guifont=DejaVu\ Sans\ Mono\ 13
+	set guifont=DejaVu\ Sans\ Mono\ Bold\ 13
 	set linespace=1
 
 	vmap <C-S-x> "+x
