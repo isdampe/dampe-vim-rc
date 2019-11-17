@@ -11,9 +11,11 @@ Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
+Plug 'eugen0329/vim-esearch'
 
 " Editor features
 Plug 'raimondi/delimitmate'
+Plug '2072/PHP-Indenting-for-VIm'
 
 " Syntaxes
 Plug 'pangloss/vim-javascript'
@@ -26,7 +28,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'https://github.com/phanviet/vim-monokai-pro.git'
 Plug 'https://github.com/rafalbromirski/vim-aurora'
 Plug 'vim-airline/vim-airline-themes'
-
 
 call plug#end()
 " End vimplug
