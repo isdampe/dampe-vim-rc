@@ -16,7 +16,8 @@ else
 	npm i intelephense -g
 	pip install python-language-server --user
 	sudo apt install clangd
-	cp coc-settings.json ~/.vim
+	cp coc-settings.json ~/.vim/
+	cp filetype.vim ~/.vim/
 fi
 
 echo "Installing Droid Sans Mono for Powerline..."
