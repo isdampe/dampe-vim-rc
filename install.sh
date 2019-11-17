@@ -12,7 +12,11 @@ else
 	echo "Installing GTK2 GVIM fix..."
 	cp ".gtkrc-2.0" ~/
 	cp ".vimrc-linux" ~/.vimrc
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	mkdir -p ~/.vim
+	npm i intelephense -g
+	pip install python-language-server --user
+	sudo apt install clangd
+	cp coc-settings.json ~/.vim
 fi
 
 echo "Installing Droid Sans Mono for Powerline..."
