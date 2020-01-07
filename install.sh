@@ -4,7 +4,12 @@ if test "$(uname)" = "Darwin" ; then
 	# MacOS
 	font_dir="$HOME/Library/Fonts"
 	cp ".vimrc-macos" ~/.vimrc
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	mkdir -p ~/.vim
+	npm i intelephense -g
+	pip install python-language-server --user
+	sudo apt install clangd
+	cp coc-settings.json ~/.vim/
+	cp filetype.vim ~/.vim/
 else
 	# Linux
 	font_dir="$HOME/.fonts"
