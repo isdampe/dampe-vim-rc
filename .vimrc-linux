@@ -66,6 +66,7 @@ inoremap (<cr> (<cr>)<c-o><s-o>
 " Hot keys.
 nnoremap <silent> <Esc><Esc> :nohl<CR><C-l>
 nnoremap <silent> <c-\> :NERDTreeToggle<CR>
+nnoremap <silent> <c-s-CR> :wincmd b \| bel terminal<CR>
 
 " Persistant undo.
 silent !mkdir -p /tmp/vim-undo
@@ -89,6 +90,7 @@ if has("gui_running")
 
 	set background=dark
 	colorscheme aurora
+	let g:loaded_matchparen = 1
 
 	"Set gui font
 	set guifont=DejaVu\ Sans\ Mono\ Bold\ 13

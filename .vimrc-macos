@@ -84,6 +84,7 @@ inoremap (<cr> (<cr>)<c-o><s-o>
 
 nnoremap <silent> <Esc><Esc> :nohl<CR><C-l>
 nnoremap <silent> <c-\> :NERDTreeToggle<CR>
+nnoremap <silent> <c-s-CR> :wincmd b \| bel terminal<CR>
 
 silent !mkdir -p /tmp/vim-undo
 set undofile
