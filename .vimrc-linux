@@ -30,6 +30,7 @@ Plug 'https://github.com/phanviet/vim-monokai-pro.git'
 Plug 'https://github.com/rafalbromirski/vim-aurora'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 " End vimplug
@@ -38,10 +39,10 @@ call plug#end()
 filetype plugin indent on
 syntax enable
 
-let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
 
-set background=light
-colorscheme PaperColor
+set background=dark
+colorscheme gruvbox 
 
 set tabstop=4
 set shiftwidth=4
@@ -54,6 +55,7 @@ set dir=/tmp
 set colorcolumn=80
 set lazyredraw
 set showmatch
+set cursorline
 
 "Searching
 set incsearch
@@ -93,8 +95,8 @@ if has("gui_running")
 	"Hide menu bars
 	set guioptions =
 
-	set background=light
-	colorscheme PaperColor
+	set background=dark
+	colorscheme gruvbox 
 	let g:loaded_matchparen = 1
 
 	"Set gui font
@@ -111,6 +113,8 @@ if has("gui_running")
 	set noerrorbells visualbell t_vb=
 	autocmd GUIEnter * set visualbell t_vb=
 
+else
+	set t_Co=256
 endif
 
 

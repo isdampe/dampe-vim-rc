@@ -23,6 +23,7 @@ else
 	sudo apt install clangd
 	cp coc-settings.json ~/.vim/
 	cp filetype.vim ~/.vim/
+	cp .tmux.conf ~/
 fi
 
 echo "Installing Droid Sans Mono for Powerline..."
