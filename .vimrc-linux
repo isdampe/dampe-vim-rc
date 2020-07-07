@@ -12,6 +12,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'eugen0329/vim-esearch'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
 
 " Editor features
 Plug 'raimondi/delimitmate'
@@ -24,6 +26,7 @@ Plug 'JulesWang/css.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug '2072/PHP-Indenting-for-VIm'
 
 " Themes
 Plug 'https://github.com/phanviet/vim-monokai-pro.git'
@@ -31,6 +34,7 @@ Plug 'https://github.com/rafalbromirski/vim-aurora'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 call plug#end()
 " End vimplug
@@ -96,19 +100,20 @@ if has("gui_running")
 	set guioptions =
 
 	set background=dark
-	colorscheme gruvbox 
+	colorscheme molokai
 	let g:loaded_matchparen = 1
+	let g:airline_theme='molokai'
 
 	"Set gui font
 	set guifont=DejaVu\ Sans\ Mono\ Bold\ 13
-	set linespace=1
+	set linespace=2
 
 	vmap <C-S-x> "+x
 	vmap <C-S-c> "+y
 
 	"Paste from clipboard
 	imap <C-S-V> <Esc>"+pi<Esc>la
-	set lines=55 columns=200
+	set lines=65 columns=258
 
 	set noerrorbells visualbell t_vb=
 	autocmd GUIEnter * set visualbell t_vb=
@@ -116,8 +121,6 @@ if has("gui_running")
 else
 	set t_Co=256
 endif
-
-
 
 
 
