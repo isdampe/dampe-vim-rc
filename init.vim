@@ -1,5 +1,7 @@
 call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
+Plug 'BurntSushi/ripgrep'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
@@ -43,6 +45,7 @@ set signcolumn=number
 "
 " Control-space: Fuzzy find.
 nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-f> <cmd>Telescope live_grep<cr>
 nnoremap <silent> <c-\> :NERDTreeToggle<CR>
 nnoremap <silent> <c-s-CR> :wincmd b \| bel terminal<CR>
 cnoremap w!! w !sudo tee > /dev/null %
